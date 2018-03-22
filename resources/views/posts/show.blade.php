@@ -1,7 +1,7 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
-    <a href="/posts" class="btn btn-primary btn-lg" style="margin-top:30px">GO BACK</a>
+    <a href="/posts" class="btn btn-primary btn-lg" style="margin-top:30px ; margin-bottom:30px">GO BACK</a>
 <div><h1>{{$post->title}}</h1>
     <div>
         <p>{!!$post->body!!}</p>
@@ -22,7 +22,7 @@
                 {!! Form::open(['action' => ['PostsController@update', $post->id],'method' => 'POST']) !!}
                 {{Form::hidden('_method','DELETE')}}
                 {{Form::submit('Delete',['class' => 'btn btn-danger'])}}
-            {!! Form::close() !!}
+                {!! Form::close() !!}
          </div>
     </div>
 @endsection 

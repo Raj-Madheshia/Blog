@@ -48,6 +48,7 @@ class PostsController extends Controller
         $posts = new Post;
         $posts->title = $request->input('title');
         $posts->body = $request->input('body');
+        $posts->user_id = auth()->user()->id;
         $posts->save();
 
         return redirect('\posts')->with('success','Post Created Successfully');
