@@ -13,16 +13,20 @@
 
 
     <div class="row">
-        <div class="pull-left">
-                <a href="/posts/{{$post->id}}/edit" class='btn btn-warning'>EDIT</a>
-                <span class="glyphicon glyphicon-chevron-left"></span>
-         </div>
-        
-         <div class="pull-right" style="margin-left:40px">
-                {!! Form::open(['action' => ['PostsController@update', $post->id],'method' => 'POST']) !!}
-                {{Form::hidden('_method','DELETE')}}
-                {{Form::submit('Delete',['class' => 'btn btn-danger'])}}
-                {!! Form::close() !!}
-         </div>
+        @if(!Auth::guest())
+            @if(Auth::user()->id == $post->user_id)
+                <div class="pull-left">
+                        <a href="/posts/{{$post->id}}/edit" class='btn btn-warning'>EDIT</a>
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                </div>
+                
+                <div class="pull-right" style="margin-left:40px">
+                        {!! Form::open(['action' => ['PostsController@update', $post->id],'method' => 'POST']) !!}
+                        {{Form::hidden('_method','DELETE')}}
+                        {{Form::submit('Delete',['class' => 'btn btn-danger'])}}
+                        {!! Form::close() !!}
+                </div>
+            @endif
+        @endif
     </div>
 @endsection 
