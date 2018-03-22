@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" font-size:20xp>Blog</a>
+        <a class="navbar-brand">Blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -17,6 +17,11 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/posts">Posts</a>
+            </li> 
+        </ul>
+        <ul class=" nav navbar-nav navbar-right">
+            <li class="nav-item">
+                <a class="nav-link" href="/posts/create">Create Post</a>
             </li> 
         </ul>
         </div>
